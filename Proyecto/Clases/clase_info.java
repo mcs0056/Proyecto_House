@@ -21,13 +21,13 @@ public class clase_info extends JFrame {
         getContentPane().add(lblImagen);
 
         // Descripción
-        JTextArea txtDescripcion = new JTextArea("Descripción del personaje House.");
-        txtDescripcion.setFont(new Font("Courier New", Font.PLAIN, 13));
-        txtDescripcion.setLineWrap(true);
-        txtDescripcion.setWrapStyleWord(true);
-        txtDescripcion.setBounds(140, 20, 420, 80);
-        txtDescripcion.setBorder(BorderFactory.createLineBorder(Color.GRAY));
-        getContentPane().add(txtDescripcion);
+        JTextArea txtRol = new JTextArea("Descripción del personaje House.");
+        txtRol.setFont(new Font("Courier New", Font.PLAIN, 13));
+        txtRol.setLineWrap(true);
+        txtRol.setWrapStyleWord(true);
+        txtRol.setBounds(140, 20, 420, 80);
+        txtRol.setBorder(BorderFactory.createLineBorder(Color.GRAY));
+        getContentPane().add(txtRol);
 
         // Primera Aparición
         JLabel lblPrimeraAparicion = new JLabel("Primera Aparición: Serie House M.D.");
