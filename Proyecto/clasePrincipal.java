@@ -50,10 +50,11 @@ public class clasePrincipal extends JFrame {
 		contentPane.setLayout(null);
 		
 		JTextArea txtrEstaEsLa = new JTextArea();
+		txtrEstaEsLa.setForeground(Color.WHITE);
+		txtrEstaEsLa.setLineWrap(true);
 		txtrEstaEsLa.setBackground(new Color(0, 128, 192));
 		txtrEstaEsLa.setBounds(114, 101, 213, 76);
 		txtrEstaEsLa.setWrapStyleWord(true);
-		txtrEstaEsLa.setLineWrap(true);
 		txtrEstaEsLa.setFont(new Font("Courier New", Font.PLAIN, 13));
 		txtrEstaEsLa.setText("Esta es la Fan Zone de Dr.House. Aquí encontrarás toda la información sobre la serie.");
 		contentPane.add(txtrEstaEsLa);
@@ -64,10 +65,17 @@ public class clasePrincipal extends JFrame {
 		contentPane.add(lblNewLabel);
 		
 		JButton btnNewButton = new JButton("Ver Personajes");
-		btnNewButton.setBounds(147, 188, 145, 23);
-		btnNewButton.setBackground(new Color(0, 128, 255));
+		btnNewButton.setBounds(124, 188, 180, 23);
+		btnNewButton.setBackground(Color.WHITE);
 		btnNewButton.setForeground(Color.BLACK);
 		btnNewButton.setFont(new Font("Courier New", Font.PLAIN, 13));
+		btnNewButton.addActionListener(e -> {
+		    claseMenu ventana = new claseMenu();
+		    ventana.setVisible(true);
+		    dispose();
+		});
 		contentPane.add(btnNewButton);
+		
+		
 	}
 }
