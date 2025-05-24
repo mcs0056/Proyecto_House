@@ -81,5 +81,5 @@ Las imágenes se cargan mediante rutas absolutas, por ejemplo:
 
 ## Autor
 
-- Desarrollado por: [Tu Nombre]
-- Contacto: [tu.email@example.com]
+- Desarrollado por: Miguel Ceballos Sánchez y Daniel Rivera Miranda
+- Contacto: mcs0056@alu.medac.es y drm0039@alu.medac.es
