@@ -18,10 +18,15 @@ Este proyecto es una aplicación Java Swing que muestra una galería de imágene
 ```
 Proyecto/
 │
-├── ConexionBD.java        # Clase para conectar a MySQL
-├── GaleriaImagenes.java   # Ventana principal con la galería
+├── Dr.House               # Directorio que aloja las imágenes
+├── aniadirPersonaje.java  # Clase para añadir personaje a la base de datos
+├── clase_info.java        # Clase que recoge la información de cada personaje de la base de datos
 ├── claseMenu.java         # Clase base (menú o ventana padre)
-├── imágenes/              # Carpeta opcional para imágenes (si se usan rutas relativas)
+├── clasePrincipal.java    # Clase principal del programa
+├── ConexionBD.java        # Clase para conectar a MySQL
+├── eliminarPersonaje.java # Clase para eliminar personaje de la base de datos
+├── GaleriaImagenes.java   # Ventana principal con la galería
+├── Personaje.java         # Clase que respresenta un personaje
 └── README.md              # Este archivo
 ```
 
