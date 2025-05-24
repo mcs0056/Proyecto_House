@@ -14,7 +14,7 @@ import java.sql.SQLException;
  * <p>Esta clase es útil para centralizar la lógica de conexión y reutilizarla en otras
  * partes de la aplicación.</p>
  * 
- * @author TuNombre
+ * @author Miguel Ceballos Sánchez y Daniel Rivera Miranda
  */
 public class ConexionBD {
 
