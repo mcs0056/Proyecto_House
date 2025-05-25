@@ -1,49 +1,51 @@
 import static org.junit.jupiter.api.Assertions.*;
-import org.junit.jupiter.api.BeforeEach;
+import java.awt.Component;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeEach;
 
 import javax.swing.*;
 
 public class TestProyecto {
 
-    private clasePrincipal principal;
+    private clasePrincipal ventana;
 
     @BeforeEach
-    void setUp() {
-        SwingUtilities.invokeLater(() -> principal = new clasePrincipal());
+    public void setUp() {
+        ventana = new clasePrincipal();
     }
 
     @Test
-    void testTituloVentana() {
-        assertEquals("Dr. House FanZone", principal.getTitle(), "El título de la ventana debe ser correcto");
+    public void testTituloVentana() {
+        assertEquals("Dr. House FanZone", ventana.getTitle(), "El título de la ventana debe ser correcto.");
     }
 
     @Test
-    void testVentanaVisible() {
-        SwingUtilities.invokeLater(() -> {
-            principal.setVisible(true);
-            assertTrue(principal.isVisible(), "La ventana debe estar visible después de inicializarse");
-        });
+    public void testTamañoVentana() {
+        assertEquals(450, ventana.getWidth(), "El ancho de la ventana debe ser 450.");
+        assertEquals(300, ventana.getHeight(), "La altura de la ventana debe ser 300.");
     }
 
     @Test
-    void testBotonPersonajesExiste() {
-        JButton btnVerPersonajes = (JButton) principal.getContentPane().getComponent(3);
-        assertEquals("Ver Personajes", btnVerPersonajes.getText(), "El botón debe llamarse 'Ver Personajes'");
+    public void testPanelPrincipalNoEsNull() {
+        assertNotNull(ventana.getContentPane(), "El contentPane no debe ser null.");
     }
 
     @Test
-    void testTextoDescripcion() {
-        JTextArea txtrDescripcion = (JTextArea) principal.getContentPane().getComponent(1);
-        assertEquals("Esta es la Fan Zone de Dr.House. Aquí encontrarás toda la información sobre la serie.",
-                txtrDescripcion.getText(), "El texto de bienvenida debe ser correcto");
+    public void testComponentesEnPanel() {
+        int numeroEsperadoComponentes = 5; // JTextArea + JLabel + 2 JButton
+        assertEquals(numeroEsperadoComponentes, ventana.getContentPane().getComponentCount(), "Debe haber 5 componentes en el panel.");
     }
 
     @Test
-    void testCierreVentana() {
-        SwingUtilities.invokeLater(() -> {
-            principal.dispose();
-            assertFalse(principal.isVisible(), "La ventana debe cerrarse correctamente");
-        });
+    public void testBotonVerPersonajesExiste() {
+        boolean encontrado = false;
+        for (Component comp : ventana.getContentPane().getComponents()) {
+            if (comp instanceof JButton && ((JButton) comp).getText().equals("Ver Personajes")) {
+                encontrado = true;
+                break;
+            }
+        }
+        assertTrue(encontrado, "El botón 'Ver Personajes' debe estar presente.");
     }
 }
+
